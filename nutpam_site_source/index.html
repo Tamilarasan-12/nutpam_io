@@ -858,13 +858,9 @@
                 ],
             };
             const STAFF = [
-                ["Dr. S. Sujatha", "Head of the Department", "+91 90000 xxxx"],
-                [
-                    "Dr. A. Valarmathi",
-                    "Second Year Coordinator",
-                    "+91 90000 xxxx",
-                ],
-                ["Dr. S. Geetha", "First Year Coordinator", "+91 90000 xxxx"],
+                ["Dr. S. Sujatha", "Head of the Department"],
+                ["Dr. A. Valarmathi", "Second Year Coordinator"],
+                ["Dr. S. Geetha", "First Year Coordinator"],
             ];
             const STU = [
                 ["B.Praveen", "President", "+91 9363659713"],
@@ -1022,7 +1018,7 @@
                 a
                     .map(
                         (p, i) =>
-                            `<div class="${c || "col-md-4"} rv" style="transition-delay:${i * 90}ms"><div class="card person tilt"><div class="card-body"><div class="av">${p[0].replace("Dr. ", "")[0]}</div><h3>${p[0]}</h3><small>${p[1]}</small><a href="${t ? "tel:" + p[2].replace(/\s/g, "") : "mailto:" + p[2]}">${ic(t ? "phone" : "mail")} ${p[2]}</a></div></div></div>`,
+                            `<div class="${c || "col-md-4"} rv" style="transition-delay:${i * 90}ms"><div class="card person tilt"><div class="card-body"><div class="av">${p[0].replace("Dr. ", "")[0]}</div><h3>${p[0]}</h3><small>${p[1]}</small>${p[2] ? `<a href="${t ? "tel:" + p[2].replace(/\s/g, "") : "mailto:" + p[2]}">${ic(t ? "phone" : "mail")} ${p[2]}</a>` : ""}</div></div></div>`,
                     )
                     .join("");
             $("#stu").innerHTML = ppl(STU, 1);
